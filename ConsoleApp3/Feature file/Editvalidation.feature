@@ -4,6 +4,6 @@
 
 @mytag
 Scenario: Validate edit command
-	Given I have created the Time and Material record
-	And I have 
+	Given I have logged in to the portal
+	And I have navigated to the Time and Material Page
 	Then I should be able to edit data on the table

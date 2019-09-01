@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using ConsoleApp3.utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
@@ -40,9 +41,9 @@ namespace ConsoleApp3
 
         internal void ValidateData()
         {
-
+            Wait.ElementIsVisible(driver, "//span[contains(.,'Go to the next page')]", "XPath");
             //Wait
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
             //WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 30));
             //IWebElement table = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table")));
             //Verification part
