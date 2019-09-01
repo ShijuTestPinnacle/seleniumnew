@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using ConsoleApp3.utilities;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace ConsoleApp3
         {
             // Identfying the username 
             //IWebElement firstName = driver.FindElement(By.Id("UserName"));
+            String usernameJS = "document.getElementById('UserName').value='hari'";
+            JSExecutor.Script(driver, usernameJS);
             firstName.SendKeys("hari");
 
             //Identify password 
