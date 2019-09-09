@@ -58,14 +58,8 @@ namespace ConsoleApp3
             TimenMaterialPage tmPage = new TimenMaterialPage(driver);
             tmPage.ClickCreateNew();
             tmPage.EnterValidDataandSave();
-            tmPage.ValidateData();
-
-
-            //static class 
-            //StaticClass.StaticMethod(); 
-            //comment a line ctrl +k + c
-            //uncomment a line ctrl +k + u
-        }
+            tmPage.ValidateData("modify");
+          }
 
         [Test]
         public void EditnValidate()
@@ -74,6 +68,9 @@ namespace ConsoleApp3
             homeInstance.VerifyHomePage();
             homeInstance.ClickAdminstration();
             homeInstance.ClickTimenMaterial();
+            TimenMaterialPage tmPage = new TimenMaterialPage(driver);
+            tmPage.EditData();
+            tmPage.ValidateEditedData("validation");
 
         }
         [Test]

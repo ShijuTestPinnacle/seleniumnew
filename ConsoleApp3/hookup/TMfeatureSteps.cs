@@ -38,11 +38,26 @@ namespace ConsoleApp3.hookup
         [Then(@"I should be able to create Time and Material record sucessfully")]
         public void ThenIShouldBeAbleToCreateTimeAndMaterialRecordSucessfully()
         {
+
+        }
+        public void ThenIshouldbeabletoeditdataandvalidateeditcommand()
+        {
+            TimenMaterialPage tmPage = new TimenMaterialPage(driver);
+            tmPage.ClickCreateNew();
+            tmPage.EditData();
+            tmPage.ValidateEditedData("validation");
+            driver.Quit();
+        }
+
+        [Then(@"I should be able to create and validate Time and Material record sucessfully")]
+        public void ThenIShouldBeAbleToCreateAndValidateTimeAndMaterialRecordSucessfully()
+        {
             TimenMaterialPage tmPage = new TimenMaterialPage(driver);
             tmPage.ClickCreateNew();
             tmPage.EnterValidDataandSave();
-            tmPage.ValidateData();
+            tmPage.ValidateData("modify");
             driver.Quit();
         }
+
     }
 }

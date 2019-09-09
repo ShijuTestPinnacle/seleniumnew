@@ -85,7 +85,27 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.And("I have navigated to the Time and Material page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
- testRunner.Then("I should be able to create Time and Material record sucessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should be able to create and validate Time and Material record sucessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Edit Time and Material record sucessfully")]
+        [NUnit.Framework.CategoryAttribute("tm@automate")]
+        public virtual void EditTimeAndMaterialRecordSucessfully()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit Time and Material record sucessfully", null, new string[] {
+                        "tm@automate"});
+#line 11
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 12
+ testRunner.Given("I have logged in to the turnup portal sucessfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.And("I have navigated to the Time and Material page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.Then("I should be able to edit data and validate edit command", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

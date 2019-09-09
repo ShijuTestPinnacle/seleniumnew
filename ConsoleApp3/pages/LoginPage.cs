@@ -19,28 +19,28 @@ namespace ConsoleApp3
         IWebElement firstName => driver.FindElement(By.Id("UserName"));
         IWebElement password => driver.FindElement(By.Id("Password"));
         IWebElement loginbtn => driver.FindElement(By.XPath("//*[@id=\"loginForm\"]/form/div[3]/input[1]"));
-
-        //Blog about different access specifiers in c#
         internal void LoginSuccess()
         {
+            ExcelLibHelpers.PopulateInCollection(@"C:\Users\Abishake Vipinan\source\repos\ConsoleApp3\ConsoleApp3\TestData\Book1.xlsx", "TMSheet");
             // Identfying the username 
             //IWebElement firstName = driver.FindElement(By.Id("UserName"));
-            String usernameJS = "document.getElementById('UserName').value='hari'";
-            JSExecutor.Script(driver, usernameJS);
-            firstName.SendKeys("hari");
+            String username = "document.getElementById('UserName').value='hari'";
+            JSExecutor.Script(driver, username);
+            
+            //firstName.SendKeys(ExcelLibHelpers.ReadData(2, "Username"));
 
             //Identify password 
             //IWebElement password = driver.FindElement(By.Id("Password"));
-            password.SendKeys("123123");
-
+            password.SendKeys(ExcelLibHelpers.ReadData(2, "Password"));
+            
             // Identify Login and click
             //IWebElement loginbtn = driver.FindElement(By.XPath("//*[@id=\"loginForm\"]/form/div[3]/input[1]"));
             loginbtn.Click();
         }
         internal void LoginFailure()
         {
-            firstName.SendKeys("sdfghari");
-            password.SendKeys("12sdfsd3123");
+            firstName.SendKeys("hari123");
+            password.SendKeys("asdf");
             loginbtn.Click();
         }
     }
